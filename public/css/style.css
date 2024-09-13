@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+}
+
+.container {
+    flex: 1;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.navbar {
+    background-color: #ECEBE4;
+}
+
+footer {
+    text-align: center;
+    background-color: #ECEBE4;
+}
+
+.f-info a {
+    text-decoration: none;
+    color: grey;
+}
+
+.f-info a:hover {
+    text-decoration: underline;
+}
+
+.foot-name {
+    font-size: 1.2em;
+}
+
+.card {
+    border: none !important;
+    margin: 1em;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-img-top {
+    border-radius: 10px;
+}
+
+.show-img {
+    height: 30vh;
+}

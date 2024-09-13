@@ -1,19 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<% layout('boilerplate.ejs') %>
 <body>
-    <h1>Create new listing</h1>
-    <form action="/listings" method="post">
-        <input type="text" placeholder="Enter title" name="listing[title]"><br><br>
-        <textarea name="listing[description]" placeholder="Enter description" rows="10" cols="35"></textarea><br><br>
-        <input type="number" placeholder="Enter Price" name="listing[price]"><br><br>
-        <input type="text" placeholder="Enter Location" name="listing[location]"><br><br>
-        <input type="text" name="listing[country]" placeholder="Enter country"><br><br>
-        <button type="submit">Create</button>
-    </form>
+    <div class="row col-8 offset-2">
+        <h1>Create new listing</h1>
+        <form action="/listings" method="post" novalidate class="needs-validation">
+            <div class="form-floating mb-3">
+                <input type="text" name="listing[title]" id="title" class="form-control" placeholder="" required>
+                <label for="title">Title</label>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Title required</div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="listing[description]" id="desc" rows="10" cols="35" class="form-control" placeholder=""></textarea>
+                <label for="desc">Description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="image" placeholder="" class="form-control" name="listing[image][url]">
+                <label for="location">Image URL</label>
+            </div>
+            <div class="row g-2">
+                <div class="form-floating mb-3 col-md-4">
+                    <input type="text" id="price" placeholder="" class="form-control" name="listing[price]" required>
+                    <label for="price">  Price</label>
+                    <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Price required</div>
+                </div>
+                <div class="form-floating mb-3 col-md-8">
+                    <input type="text" id="country" placeholder="" class="form-control" name="listing[country]" required>
+                    <label for="country">Country</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Country required</div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="location" placeholder="" class="form-control" name="listing[location]" required>
+                <label for="location">Location</label>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Location required</div>
+            </div>
+            <button class="btn btn-dark" type="submit">Create</button>
+        </form>
+    </div>
 </body>
-</html>
